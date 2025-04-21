@@ -1,0 +1,21 @@
+using SggApp.DAL.Entidades;
+using SggApp.DAL.Contextos;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace SggApp.DAL.Repositorios
+{
+    public class MonedaRepository : GenericRepository<Moneda>, IMonedaRepository
+    {
+        private readonly SggAppDbContext _context;
+
+        // Constructor que recibe el contexto y lo pasa al repositorio genérico
+        public MonedaRepository(SggAppDbContext context) : base(context)
+        {
+            _context = context;
+        }
+
+        // Si necesitas métodos adicionales específicos para Moneda, puedes agregarlos aquí
+    }
+}
